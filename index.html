@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SA Community Food Garden Project</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>South African Food Gardens for Community Food Security</h1>
+    <p>Real case studies, tools, and solutions for resilient communities</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#description">Description</a></li>
+      <li><a href="#case-studies">Case Studies</a></li>
+      <li><a href="#charts">Charts</a></li>
+      <li><a href="#tools">Calculators</a></li>
+      <li><a href="#recommendations">Recommendations</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="description">
+      <h2>Project Description</h2>
+      <p>This website showcases how South African communities use gardening to fight food insecurity. We highlight real examples, offer charts, and provide calculators to help plan and manage small to medium food gardens.</p>
+    </section>
+
+    <section id="case-studies">
+      <h2>Real Case Studies (South Africa)</h2>
+      <ul>
+        <li><strong>Emfuleni, Gauteng:</strong> 86% of participants could supplement their diets through gardening.</li>
+        <li><strong>Umdoni, KZN:</strong> Only 15.8% reached full food security through gardens. Issues included water and training.</li>
+        <li><strong>EduPlant:</strong> Schools turned into food production hubs. 450+ schools in 2024.</li>
+        <li><strong>Siyakhana Garden, Johannesburg:</strong> Trains communities and promotes sustainability.</li>
+      </ul>
+    </section>
+
+    <section id="charts">
+      <h2>Sample Yields per Vegetable (kg/m²)</h2>
+      <canvas id="yieldChart" width="600" height="300"></canvas>
+    </section>
+
+    <section id="tools">
+      <h2>Garden Planning Tools</h2>
+
+      <!-- Yield Calculator -->
+      <h3>1. 🌽 Yield Calculator</h3>
+      <form id="yieldForm">
+        <label>Garden Area (m²): <input type="number" id="area" value="10" min="1" required></label><br>
+        <label>Plants per m²: <input type="number" id="density" value="4" min="1" required></label><br>
+        <label>Yield per Plant (kg): <input type="number" id="yieldPerPlant" value="0.5" step="0.1" required></label><br>
+        <button type="button" onclick="calculateYield()">Calculate Yield</button>
+        <p>Total Estimated Yield: <strong id="yieldResult">0.00</strong> kg</p>
+      </form>
+
+      <!-- Water Usage -->
+      <h3>2. 💧 Water Usage Estimator</h3>
+      <form id="waterForm">
+        <label>Water per m² per day (litres): <input type="number" id="waterPerM2" value="2" step="0.1" required></label><br>
+        <label>Days per month: <input type="number" id="daysWatered" value="20" required></label><br>
+        <button type="button" onclick="calculateWater()">Estimate Water</button>
+        <p>Monthly Water Requirement: <strong id="waterResult">0</strong> litres</p>
+      </form>
+
+      <!-- Cost Estimator -->
+      <h3>3. 💰 Cost Estimator</h3>
+      <form id="costForm">
+        <label>Fertilizer Cost (R per kg): <input type="number" id="fertilizerCost" value="30" required></label><br>
+        <label>Fertilizer Needed (kg): <input type="number" id="fertilizerQty" value="5" required></label><br>
+        <label>Seeds Cost (R): <input type="number" id="seedCost" value="20" required></label><br>
+        <label>Other Costs (tools, compost etc): <input type="number" id="otherCost" value="50" required></label><br>
+        <button type="button" onclick="calculateCost()">Estimate Total Cost</button>
+        <p>Total Estimated Cost: <strong id="costResult">R0.00</strong></p>
+      </form>
+    </section>
+
+    <section id="recommendations">
+      <h2>Community Garden Recommendations</h2>
+      <ul>
+        <li>📍 Identify unused spaces (schools, churches, yards).</li>
+        <li>🚿 Harvest rainwater to reduce costs.</li>
+        <li>🌱 Use compost and natural fertilizers to lower chemical dependency.</li>
+        <li>👩‍🏫 Train community members using workshops or school outreach.</li>
+        <li>📊 Collect and monitor data to improve productivity.</li>
+        <li>🌍 Collaborate with local municipalities for long-term support.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Community Garden Initiative | All South African case studies cited above.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
